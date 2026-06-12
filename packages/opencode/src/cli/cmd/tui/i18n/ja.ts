@@ -370,6 +370,7 @@ export const dict = {
   "cli.providers.other": "その他のプロバイダー",
   "cli.providers.mimo.recommended_hint": "推奨",
   "cli.providers.mimo_free.hint": "匿名無料チャネル / mimo-auto",
+  "cli.providers.opencode.hint": "Zen従量課金 / Goサブスクリプション",
   "cli.providers.mimo_free.verifying": "MiMo Auto (free) チャネルを検証中...",
   "cli.providers.mimo_free.ready": "MiMo Auto (free) チャネル準備完了",
   "cli.providers.mimo_free.failed": "MiMo Auto (free) の自己診断に失敗",

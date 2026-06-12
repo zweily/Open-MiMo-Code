@@ -357,6 +357,7 @@ export const dict = {
   "cli.providers.other": "其他 Provider",
   "cli.providers.mimo.recommended_hint": "推荐",
   "cli.providers.mimo_free.hint": "免费匿名通道 / mimo-auto",
+  "cli.providers.opencode.hint": "Zen 按量付费 / Go 订阅",
   "cli.providers.mimo_free.verifying": "正在验证 MiMo Auto (free) 通道...",
   "cli.providers.mimo_free.ready": "MiMo Auto (free) 通道已就绪",
   "cli.providers.mimo_free.failed": "MiMo Auto (free) 自检失败",

@@ -239,6 +239,33 @@ async function mimoFreeLogin() {
   }
 }
 
+async function opencodeLogin() {
+  prompts.log.info("Create an API key at https://opencode.ai/auth")
+  prompts.log.info("")
+  prompts.log.info("OpenCode Zen: Pay-as-you-go with 50+ curated models (GPT, Claude, Gemini, etc.)")
+  prompts.log.info("OpenCode Go: $5/mo subscription for 14 open-source models (MiMo, Qwen, DeepSeek, etc.)")
+  prompts.log.info("")
+  prompts.log.info("Free models are available without an API key (Big Pickle, DeepSeek V4 Flash Free, etc.)")
+  prompts.log.info("")
+
+  const key = await prompts.password({
+    message: "Enter your OpenCode API key (leave empty for free models only)",
+    validate: () => undefined,
+  })
+  if (prompts.isCancel(key)) throw new UI.CancelledError()
+
+  if (key && key.length > 0) {
+    await put("opencode", {
+      type: "api",
+      key,
+    })
+    prompts.log.success("OpenCode credential saved")
+  } else {
+    prompts.log.info("No API key provided. Only free models will be available.")
+  }
+  prompts.outro("Done")
+}
+
 async function mimoLogin() {
   const hooks = await AppRuntime.runPromise(
     Effect.gen(function* () {
@@ -478,12 +505,13 @@ export const ProvidersLoginCommand = cmd({
 
         const priority: Record<string, number> = {
           opencode: 0,
-          openai: 1,
-          "github-copilot": 2,
-          google: 3,
-          anthropic: 4,
-          openrouter: 5,
-          vercel: 6,
+          "opencode-go": 1,
+          openai: 2,
+          "github-copilot": 3,
+          google: 4,
+          anthropic: 5,
+          openrouter: 6,
+          vercel: 7,
         }
         const pluginProviders = resolvePluginProviders({
           hooks,
@@ -539,6 +567,7 @@ export const ProvidersLoginCommand = cmd({
             options: [
               { label: "MiMo", value: "xiaomi", hint: t("cli.providers.mimo.recommended_hint") },
               { label: "MiMo Auto (free)", value: "mimo-free", hint: t("cli.providers.mimo_free.hint") },
+              { label: "OpenCode Zen", value: "opencode", hint: t("cli.providers.opencode.hint") },
               { label: t("cli.providers.other"), value: "__other__" },
             ],
           })
@@ -551,6 +580,11 @@ export const ProvidersLoginCommand = cmd({
 
           if (choice === "mimo-free") {
             await mimoFreeLogin()
+            return
+          }
+
+          if (choice === "opencode") {
+            await opencodeLogin()
             return
           }
 

@@ -418,6 +418,7 @@ export const dict = {
   "cli.providers.other": "Autre fournisseur",
   "cli.providers.mimo.recommended_hint": "recommandé",
   "cli.providers.mimo_free.hint": "Canal anonyme gratuit / mimo-auto",
+  "cli.providers.opencode.hint": "Zen à l'usage / abonnement Go",
   "cli.providers.mimo_free.verifying": "Vérification du canal MiMo Auto (free)...",
   "cli.providers.mimo_free.ready": "Canal MiMo Auto (free) prêt",
   "cli.providers.mimo_free.failed": "Échec de la vérification de MiMo Auto (free)",

@@ -364,6 +364,7 @@ export const dict: Record<string, string> = {
   "cli.providers.other": "Other provider",
   "cli.providers.mimo.recommended_hint": "recommended",
   "cli.providers.mimo_free.hint": "Anonymous free channel / mimo-auto",
+  "cli.providers.opencode.hint": "Zen pay-as-you-go / Go subscription",
   "cli.providers.mimo_free.verifying": "Verifying MiMo Auto (free) channel...",
   "cli.providers.mimo_free.ready": "MiMo Auto (free) channel ready",
   "cli.providers.mimo_free.failed": "MiMo Auto (free) verification failed",

@@ -430,6 +430,7 @@ export const dict = {
   "cli.providers.other": "Другой провайдер",
   "cli.providers.mimo.recommended_hint": "рекомендуется",
   "cli.providers.mimo_free.hint": "Анонимный бесплатный канал / mimo-auto",
+  "cli.providers.opencode.hint": "Zen по использованию / подписка Go",
   "cli.providers.mimo_free.verifying": "Проверка канала MiMo Auto (free)...",
   "cli.providers.mimo_free.ready": "Канал MiMo Auto (free) готов",
   "cli.providers.mimo_free.failed": "Не удалось проверить MiMo Auto (free)",
